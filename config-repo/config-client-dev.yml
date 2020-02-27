@@ -1,3 +1,5 @@
-name = 薛延平
-project.user.male = male
+name : 薛延平
+project:
+  user:
+    male: male
 
