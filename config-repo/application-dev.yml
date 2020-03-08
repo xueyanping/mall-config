@@ -18,5 +18,5 @@ hystrix:
             # We do rate-limiting separately using a custom org.springframework.cloud.gateway.filter.ratelimit.AbstractRateLimiter based on resilience4j
             maxConcurrentRequests: 100000
 ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
