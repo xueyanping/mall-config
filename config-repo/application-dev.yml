@@ -5,7 +5,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 300000 #默认1s超时，如果不配置超时时间，第一次请求网关会失败(超时)
+            timeoutInMilliseconds: 20000 #默认1s超时，如果不配置超时时间，第一次请求网关会失败(超时)
           strategy: SEMAPHORE
           semaphore:
             # Practically max int, but Hystrix needs an actual value. The default would be 10.
