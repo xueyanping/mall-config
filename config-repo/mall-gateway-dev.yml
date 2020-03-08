@@ -1,18 +1,6 @@
 server:
   port: 10010
-hystrix:
-  share-security-context: true
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 300000 #默认1s超时，如果不配置超时时间，第一次请求网关会失败(超时)
-          strategy: SEMAPHORE
-          semaphore:
-            # Practically max int, but Hystrix needs an actual value. The default would be 10.
-            # We do rate-limiting separately using a custom org.springframework.cloud.gateway.filter.ratelimit.AbstractRateLimiter based on resilience4j
-            maxConcurrentRequests: 100000
+
 zuul:
   prefix: /api # 路由路径前缀
   routes:
