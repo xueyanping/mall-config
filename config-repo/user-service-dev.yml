@@ -5,10 +5,7 @@ spring:
     host: localhost
     username: xue
     password: 123456
-    virtual-host: /mall
-  redis:
-    host: 192.168.31.205
-    database: 1  
+    virtual-host: /mall  
         
 mybatis:
   type-aliases-package: com.mall.user.pojo
