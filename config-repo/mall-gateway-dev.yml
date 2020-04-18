@@ -8,18 +8,18 @@ zuul:
       path: /mall-registry/**
       serviceId: mall-registry
     item-service:
-       path: /item/**
-       serviceId: item-service
+      path: /item/**
+      serviceId: item-service
     upload-service:
-       path: /upload/**
-       serviceId: upload-service
+      path: /upload/**
+      serviceId: upload-service
     search-service:
-       path: /search/**
-       serviceId: search-service
+      path: /search/**
+      serviceId: search-service
     user-service:
-       path: /user/**
-       serviceId: user-service
+      path: /user/**
+       erviceId: user-service
     user-service:
-       path: /auth/**
-       serviceId: auth-service
+      path: /auth/**
+      serviceId: auth-service
 
