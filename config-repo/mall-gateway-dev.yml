@@ -19,7 +19,7 @@ zuul:
     user-service:
       path: /user/**
       serviceId: user-service
-    user-service:
+    auth-service:
       path: /auth/**
       serviceId: auth-service
 
