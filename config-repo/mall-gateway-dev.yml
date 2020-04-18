@@ -18,7 +18,7 @@ zuul:
       serviceId: search-service
     user-service:
       path: /user/**
-       erviceId: user-service
+      serviceId: user-service
     user-service:
       path: /auth/**
       serviceId: auth-service
