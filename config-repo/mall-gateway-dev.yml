@@ -22,4 +22,5 @@ zuul:
     auth-service:
       path: /auth/**
       serviceId: auth-service
-
+  add-host-header: true #携带本身请求的头信息
+  sensitive-headers: # 敏感头信息，此处设置为null,否则set-cookie无效
