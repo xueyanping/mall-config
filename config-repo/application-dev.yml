@@ -12,27 +12,17 @@ spring:
       max-lifetime: 28830000 # 一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒，参考MySQL wait_timeout参数（show variables like '%timeout%';）
       maximum-pool-size: 9 # 连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
   redis:
-    host: 39.101.205.238
-    #host: 192.168.31.205
-  security:
-    #user:
-     #name: user1
-     #password: password1
-    oauth2:
-      resource:
-        user-info-uri: http://mall-gateway:10010/api/auth/verify
-        id: ${spring.application.name:}
-        filter-order: 500
-      client:
-        clientId: server
-        clientSecret: server
-        accessTokenUri: http://mall-gateway:10010/api/auth/oauth/token
-        grantType: client_credentials
-        grant_type: client_credentials
-        scope: server
-      token:
-        expireTime: 30
-
+    host: 127.0.0.1
+    port: 6379
+    password: ${REDIS_SERVER_PASSWORD:admin}
+    database: 2
+    timeout: 0
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: 50
+        max-idle: 100
+        min-idle: 20
 
 hystrix:
   share-security-context: true
@@ -50,3 +40,19 @@ hystrix:
 ribbon:
   ReadTimeout: 20000
   ConnectTimeout: 20000
+  
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://mall-gateway:10010/api/auth/verify
+      id: ${spring.application.name:}
+      filter-order: 500
+    client:
+      clientId: server
+      clientSecret: server
+      accessTokenUri: http://mall-gateway:10010/api/auth/oauth/token
+      grantType: client_credentials
+      grant_type: client_credentials
+      scope: server
+    token:
+      expireTime: 30
