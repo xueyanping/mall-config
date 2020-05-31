@@ -18,6 +18,20 @@ spring:
     user:
       name: user1
       password: password1
+    oauth2:
+      resource:
+        user-info-uri: http://api-gateway:10010/api/auth/verify
+        id: ${spring.application.name:}
+        filter-order: 500
+      client:
+        clientId: server
+        clientSecret: server
+        accessTokenUri: http://api-gateway:10010/api/auth/oauth/token
+        grantType: client_credentials
+        grant_type: client_credentials
+        scope: server
+      token:
+        expireTime: 30
 
 
 hystrix:
